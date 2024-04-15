@@ -3,11 +3,12 @@
 npm-debug.log*
 
 # Dependency directories
-node_modules/
+node_modules
 
 # VSCode extensions
 .vscode-test
 
 
 # Hardhat files
-cache/
+cache
+artifacts
