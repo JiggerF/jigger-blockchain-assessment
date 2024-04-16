@@ -1,3 +1,4 @@
 #!/bin/bash -e
 
-npx hardhat run ./scripts/deploy.js
+docker-compose build
+docker-compose run hardhat

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  hardhat:
+    build: .
+    working_dir: /work
+    environment:
+      NETWORK: "Sepolia"
+    env_file:
+      - .env
+    volumes:
+      - .:/work
+    entrypoint: ["/bin/sh", scripts/entrypoint.sh]

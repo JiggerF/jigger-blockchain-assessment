@@ -18,18 +18,21 @@ async function writeToFile(deploymentInfo) {
 async function main() {
     try {
         // Load the contract
-        const contractFactoryItem = await ethers.getContractFactory(CONTRACT_NAME)
+        const GetterSetterContract = await ethers.getContractFactory(CONTRACT_NAME)
 
         // Deploy the contract
-        const getterSetterContract = await contractFactoryItem.deploy()
+        console.log("Deploying the contract ...")
+        const getterSetterContract = await GetterSetterContract.deploy()
 
         // Wait until the contract is fully deployed
-        await getterSetterContract.deployTransaction
-        let deployedContractAddress = getterSetterContract.target
+        console.log("Waiting for contract to fully deploy ...")
+        const deployedContractAddress = (await getterSetterContract.deploymentTransaction().wait())
+            .contractAddress
+
         console.log(`Contract is deployed to address: ${deployedContractAddress}`)
 
         // Connect to the deployed contract
-        const contractInstance = await contractFactoryItem.attach(deployedContractAddress)
+        const contractInstance = await GetterSetterContract.attach(deployedContractAddress)
 
         // Invoke setter and getter function of the contract
         await contractInstance.setBytes(BYTE_VALUE)

@@ -1,7 +1,8 @@
-require("@nomicfoundation/hardhat-toolbox");
+require("@nomicfoundation/hardhat-toolbox")
+require("dotenv").config
 
-const ALCHEMY_API_KEY = vars.get("ALCHEMY_API_KEY");
-const SEPOLIA_PRIVATE_KEY = vars.get("SEPOLIA_PRIVATE_KEY");
+const ALCHEMY_API_KEY = process.env.ALCHEMY_API_KEY;
+const SEPOLIA_PRIVATE_KEY = process.env.SEPOLIA_PRIVATE_KEY
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {

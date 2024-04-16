@@ -9,7 +9,9 @@ node_modules
 # VSCode extensions
 .vscode-test
 
-
 # Hardhat files
 cache
 artifacts
+
+# Env config
+.env
