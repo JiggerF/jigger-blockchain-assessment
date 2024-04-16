@@ -36,7 +36,7 @@ To deploy our contract to a live test network (e.g. Sepolia) we'll use **Docker*
     $ ./script/deploy-contract.sh
 ```
 2. Deployment status is shown on the console like below:
-```shell
+```text
     ...
     Compiling contract ...
     Downloading compiler 0.8.6
@@ -44,16 +44,17 @@ To deploy our contract to a live test network (e.g. Sepolia) we'll use **Docker*
     Compiled 1 Solidity file successfully (evm target: berlin).
     Deploying contract to a testnet ...
     Deploying the contract ...
-    Contract is deployed to address: 0xF35eEc011Be28Cce017F3472E8027336Cc5c06c1
+    Waiting for contract to fully deploy ...
+    Contract is deployed to address: 0xB5544af4a25E60eD1DD81739Bd1C37e194cE2222
     Calling SetBytes function with value 0x12345678
     Calling getBytes function and retrieved 0x
-    {"contractAddress":"0xF35eEc011Be28Cce017F3472E8027336Cc5c06c1","ownerAddress":"0x102fb8782C4e03795FdA365427aC21196203281F","valueSet":"0x12345678"}
+    {"contractAddress":"0xB5544af4a25E60eD1DD81739Bd1C37e194cE2222","ownerAddress":"0x102fb8782C4e03795FdA365427aC21196203281F","valueSet":"0x12345678"}
     Data has been written to file output.json successfully.
     - end-
 ```
 3. File `output.json` is generated in the project's root folder
 ```shell
-    {"contractAddress":"0x5FbDB2315678afecb367f032d93F642f64180aa3","ownerAddress":"0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266","valueSet":"0x12345678"}
+    {"contractAddress":"0xB5544af4a25E60eD1DD81739Bd1C37e194cE2222","ownerAddress":"0x102fb8782C4e03795FdA365427aC21196203281F","valueSet":"0x12345678"}
 ```
 ### Deploy contract to in-memory for debugging
 In order to test the deployment script without deploying to a live test network
